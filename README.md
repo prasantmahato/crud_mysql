@@ -16,8 +16,10 @@ source venv/bin/activate    # MacOS or Linux
 .\venv\Scripts\activate     # Windows
 ```
 
-Install the required packages
+Install the required packages and run the server
 
 ```bash
 pip3 install -r requirements.txt
+export FLASK_APP=app.py
+flask run
 ```
