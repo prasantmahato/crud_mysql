@@ -1,4 +1,4 @@
-# crud_mysql
+# API for CRUD Functions with Flask &  MySQL
 
 ## Steps to Execute
 
@@ -20,4 +20,40 @@ Install the required packages
 
 ```bash
 pip3 install -r requirements.txt
+```
+
+## View All Employees
+
+```bash
+curl --location 'http://127.0.0.1:5000/'
+```
+
+## Create Table Employee
+
+```bash
+curl --location 'http://127.0.0.1:5000/create'
+```
+
+## Insert New Employee
+
+```bash
+curl --location 'http://127.0.0.1:5000/insert' \
+--form 'name="Prasant"' \
+--form 'email="prasant@gmail.com"' \
+--form 'dob="2000-03-14"'
+```
+
+## Update Employee by Email
+
+```bash
+curl --location 'http://127.0.0.1:5000/update' \
+--form 'name="Prasant Mahato"' \
+--form 'email="prasant@gmail.com"' \
+```
+
+## Delete Employee Record
+
+```bash
+curl --location 'http://127.0.0.1:5000/delete' \
+--form 'email="prasant@gmail.com"'
 ```
