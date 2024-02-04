@@ -10,6 +10,7 @@ mydb = mysql.connector.connect(host="localhost", user="root", password="root", d
 mycursor = mydb.cursor()
 q = Queries()  # Use query statements
 
+# Route to list all employee with complete details
 @app.route("/")
 def root():
     cursor = mydb.cursor()
@@ -19,6 +20,7 @@ def root():
         print(row)
     return {"Employees:" : rows}, 200
 
+# Route to drop table and create table
 @app.route("/create")
 def create():
     cursor = mydb.cursor()
@@ -29,6 +31,7 @@ def create():
     return {"message": "Table Created"}, 201
 
 
+# Route to save new record
 @app.route("/insert", methods=["POST"])
 def insert():
     name = request.form["name"]
@@ -41,6 +44,7 @@ def insert():
     mydb.commit()
     return {"message": "Employee Registered"}, 201
 
+# Update record
 @app.route("/update", methods=["POST"])
 def update():
     # Updating employee by it's email ID
@@ -53,6 +57,8 @@ def update():
     mydb.commit()
     return {"message": "Employee data Updated"}, 200
 
+
+# Delete particular record by Email
 @app.route("/delete", methods=["POST"])
 def delete():
     # Delete employee by it's email ID
