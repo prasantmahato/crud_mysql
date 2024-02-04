@@ -1,3 +1,6 @@
+'''
+Helper class to store queries to that can be executed
+'''
 class Queries:
     drop = "DROP TABLE IF EXISTS register"
     
