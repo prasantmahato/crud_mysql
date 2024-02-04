@@ -20,6 +20,7 @@ Install the required packages and run the server
 
 ```bash
 pip3 install -r requirements.txt
+flask run
 ```
 
 ## View All Employees
